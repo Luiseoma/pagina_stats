@@ -1,11 +1,33 @@
 <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
 
-<h1>Partidos disponibles</h1>
+<div class="container">
 
-{% for id, match in matches.items() %}
-    <div class="card">
-        <a href="/match/{{ id }}">
-            {{ match.team1 }} vs {{ match.team2 }}
-        </a>
-    </div>
-{% endfor %}
+    <h1>Partidos disponibles</h1>
+
+    {% for match in matches %}
+
+        <div class="card">
+
+            <a href="/match/{{ match.id }}">
+
+                {{ match.team1 }}
+
+                vs
+
+                {% if match.team2 %}
+                    {{ match.team2 }}
+                {% else %}
+                    {{ match.team2_options | join(" / ") }}
+                {% endif %}
+
+            </a>
+
+            <p>{{ match.date }}</p>
+            <p>{{ match.hour }}</p>
+            <p>{{ match.stage }}</p>
+
+        </div>
+
+    {% endfor %}
+
+</div>

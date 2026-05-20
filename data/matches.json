@@ -793,8 +793,8 @@
     },
     {
     "id": "R16A",
-    "team1_options": "Winner R32A",
-    "team2_options": "Winner R32D",
+    "team1": "Winner R32A",
+    "team2": "Winner R32D",
     "date": "2026-07-04",
     "hour": "13:00",
     "stage": "Round of 16",
@@ -928,7 +928,7 @@
     },
     {
     "id": "F2",
-    "team1": "loser SF1",
+    "team1": "Loser SF1",
     "team2": "Loser SF2",
     "date": "2026-07-18",
     "hour": "17:00",

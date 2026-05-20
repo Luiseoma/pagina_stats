@@ -1,13 +1,71 @@
 <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
 
-<h1>{{ match.team1 }} vs {{ match.team2 }}</h1>
+<div class="container">
+    {% if no_teams %}
 
-<div class="card">
-    <h3>Probabilidades calculadas</h3>
+        <h1>Partido aún sin equipos definidos</h1>
 
-    <p>{{ match.team1 }}: {{ prob_team1 }}%</p>
-    <p>Empate: {{ prob_draw }}%</p>
-    <p>{{ match.team2 }}: {{ prob_team2 }}%</p>
+        <p>{{ match.team1 }}</p>
+
+        {% if match.team2 %}
+            <p>{{ match.team2 }}</p>
+        {% else %}
+            <p>{{ match.team2_options | join(" / ") }}</p>
+        {% endif %}
+
+    {% else %}
+
+        <h1>{{ match.team1 }} vs {{ match.team2 }}</h1>
+
+        <h2>Probabilidades</h2>
+
+        <p>{{ match.team1 }}: {{ prob_team1 }}%</p>
+
+        <p>Empate: {{ prob_draw }}%</p>
+
+        <p>{{ match.team2 }}: {{ prob_team2 }}%</p>
+
+        <hr>
+
+        <h2>Estadísticas</h2>
+
+        <div class="team-stats">
+
+            <h3>{{ match.team1 }}</h3>
+
+            <p>Grupo: {{ team1_data.group }}</p>
+
+            <p>
+                Goles anotados:
+                {{ team1_data.goals_for }}
+            </p>
+
+            <p>
+                Goles recibidos:
+                {{ team1_data.goals_against }}
+            </p>
+
+        </div>
+
+        <hr>
+
+        <div class="team-stats">
+
+            <h3>{{ match.team2 }}</h3>
+
+            <p>Grupo: {{ team2_data.group }}</p>
+
+            <p>
+                Goles anotados:
+                {{ team2_data.goals_for }}
+            </p>
+
+            <p>
+                Goles recibidos:
+                {{ team2_data.goals_against }}
+            </p>
+
+        </div>
 </div>
 
-<a href="/">⬅ Volver</a>
+{% endif %}

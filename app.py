@@ -1,52 +1,90 @@
 from flask import Flask, render_template
+import json
 
 app = Flask(__name__)
+
+# =========================
+# FUNCIONES
+# =========================
 
 def fuerza(form):
     return sum(form) / len(form)
 
-matches = {
-    1: {
-        "team1": "México",
-        "team2": "Sudáfrica",
-        "home_advantage": 0.15,
-        "form_team1": [1, 0, 1, 1, 1],
-        "form_team2": [0, 1, 0, 0, 1]
-    }
-}
+
+# =========================
+# LEER JSONS
+# =========================
+
+with open("data/matches.json", "r", encoding="utf-8") as file:
+    matches_list = json.load(file)
+
+with open("data/teams.json", "r", encoding="utf-8") as file:
+    teams = json.load(file)
+
+# Convertir matches en diccionario para búsquedas rápidas
+matches = {str(match["id"]): match for match in matches_list}
+
+
+# =========================
+# HOME
+# =========================
 
 @app.route("/")
-def home ():
-    return render_template('home.html',matches=matches)
+def home():
+    return render_template("home.html", matches=matches_list)
 
-@app.route("/match/<int:id>")
+
+# =========================
+# MATCH PAGE
+# =========================
+
+@app.route("/match/<id>")
 def match(id):
+
     match = matches[id]
 
-    f1 = fuerza(match["form_team1"])
-    f2 = fuerza(match["form_team2"])
+    # Revisar si existen team1 y team2
+    if "team1" not in match or "team2" not in match:
 
-    # ventaja local
-    f1 = f1 + match.get("home_advantage", 0)
+        return render_template(
+            "match.html",
+            match=match,
+            no_teams=True
+        )
 
-    total = f1 + f2
+    # Buscar datos de equipos
+    team1_data = teams.get(match["team1"])
+    team2_data = teams.get(match["team2"])
 
-    base_draw = 0.25  # 25% empate base tipo Sofascore
+    # Calcular fuerza
+    f1 = fuerza(team1_data["form"])
+    f2 = fuerza(team2_data["form"])
+
+    # Probabilidad empate base
+    base_draw = 0.25
 
     prob_draw = round(base_draw * 100, 1)
 
     remaining = 100 - prob_draw
 
-    prob_team1 = round((f1 / total) * remaining, 1)
-    prob_team2 = round((f2 / total) * remaining, 1)
+    prob_team1 = round((f1 / (f1 + f2)) * remaining, 1)
+    prob_team2 = round((f2 / (f1 + f2)) * remaining, 1)
 
     return render_template(
         "match.html",
         match=match,
+        team1_data=team1_data,
+        team2_data=team2_data,
         prob_team1=prob_team1,
         prob_team2=prob_team2,
-        prob_draw=prob_draw
+        prob_draw=prob_draw,
+        no_teams=False
     )
+
+
+# =========================
+# RUN APP
+# =========================
 
 if __name__ == "__main__":
     app.run(debug=True)
