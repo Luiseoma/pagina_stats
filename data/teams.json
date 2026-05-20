@@ -28,320 +28,317 @@
     },
 
     
-    "Chequia": {
-        "form":[1, 1, 1, 1, 0, 0.5, 0.5, 1, 0, 1],
-        "goals_for": 18,
-        "goals_against": 12,
+    "Canadá": {
+        "form":[0.5, 0.5, 1, 1, 0.5, 0.5, 0, 1, 1, 0],
+        "goals_for": 10,
+        "goals_against": 4,
         "group":"B"
     },
 
-    "Chequia": {
-        "form":[1, 1, 1, 1, 0, 0.5, 0.5, 1, 0, 1],
-        "goals_for": 18,
-        "goals_against": 12,
+    "Bosnia y Herzegovina": {
+        "form":[0.5, 0.5, 0.5, 1, 1, 0.5, 0, 1, 0, 1],
+        "goals_for": 21,
+        "goals_against": 11,
         "group":"B"
     },
 
-    "Chequia": {
-        "form":[1, 1, 1, 1, 0, 0.5, 0.5, 1, 0, 1],
-        "goals_for": 18,
-        "goals_against": 12,
+    "Catar": {
+        "form":[0, 0.5,0, 0, 1, 0, 0, 0.5, 0, 0],
+        "goals_for": 7,
+        "goals_against": 18,
         "group":"B"
     },
 
-    "Chequia": {
-        "form":[1, 1, 1, 1, 0, 0.5, 0.5, 1, 0, 1],
-        "goals_for": 18,
-        "goals_against": 12,
+    "Suiza": {
+        "form":[0.5, 0, 0.5, 1, 0.5, 1, 1, 1, 1, 1],
+        "goals_for": 25,
+        "goals_against": 8,
         "group":"B"
     },
 
 
-    "Chequia": {
-        "form":[1, 1, 1, 1, 0, 0.5, 0.5, 1, 0, 1],
+    "Brasil": {
+        "form":[1, 0, 0.5, 1, 0, 1, 0, 1, 1, 0.5],
         "goals_for": 18,
-        "goals_against": 12,
-        "group":"A"
+        "goals_against": 8,
+        "group":"C"
     },
 
 
-    "Chequia": {
-        "form":[1, 1, 1, 1, 0, 0.5, 0.5, 1, 0, 1],
+    "Marruecos": {
+        "form":[1, 0, 1, 0.5, 1, 1, 1, 0.5, 1, 1],
         "goals_for": 18,
-        "goals_against": 12,
-        "group":"A"
+        "goals_against": 5,
+        "group":"C"
     },
 
 
-    "Chequia": {
-        "form":[1, 1, 1, 1, 0, 0.5, 0.5, 1, 0, 1],
-        "goals_for": 18,
-        "goals_against": 12,
-        "group":"A"
+    "Haití": {
+        "form":[0.5, 0, 1, 1, 0, 1, 0.5, 0, 0, 0.5],
+        "goals_for": 12,
+        "goals_against": 10,
+        "group":"C"
     },
 
 
-    "Chequia": {
-        "form":[1, 1, 1, 1, 0, 0.5, 0.5, 1, 0, 1],
+    "Escocia": {
+        "form":[0, 0, 1, 0, 1, 1, 1, 0.5, 1, 0],
         "goals_for": 18,
         "goals_against": 12,
-        "group":"A"
+        "group":"C"
     },
 
 
-    "Chequia": {
-        "form":[1, 1, 1, 1, 0, 0.5, 0.5, 1, 0, 1],
-        "goals_for": 18,
-        "goals_against": 12,
-        "group":"A"
+    "Estados Unidos": {
+        "form":[0, 0, 1, 1, 1, 0.5, 1, 0, 0, 1],
+        "goals_for": 17,
+        "goals_against": 16,
+        "group":"D"
     },
 
 
-    "Chequia": {
-        "form":[1, 1, 1, 1, 0, 0.5, 0.5, 1, 0, 1],
-        "goals_for": 18,
-        "goals_against": 12,
-        "group":"A"
+    "Paraguay": {
+        "form":[0, 1, 1, 0, 0, 0.5, 1, 0.5, 0, 1],
+        "goals_for": 10,
+        "goals_against": 10,
+        "group":"D"
     },
 
-    "Chequia": {
-        "form":[1, 1, 1, 1, 0, 0.5, 0.5, 1, 0, 1],
-        "goals_for": 18,
-        "goals_against": 12,
-        "group":"A"
+    "Australia": {
+        "form":[0, 0, 0, 1, 1, 1, 1, 1, 1, 1],
+        "goals_for": 16,
+        "goals_against": 9,
+        "group":"D"
     },
 
-    "Chequia": {
-        "form":[1, 1, 1, 1, 0, 0.5, 0.5, 1, 0, 1],
-        "goals_for": 18,
-        "goals_against": 12,
-        "group":"A"
+    "Turquía": {
+        "form":[1, 1, 0.5, 1, 1, 1, 0, 1, 0, 1],
+        "goals_for": 21,
+        "goals_against": 14,
+        "group":"D"
     },
 
-    "Chequia": {
-        "form":[1, 1, 1, 1, 0, 0.5, 0.5, 1, 0, 1],
-        "goals_for": 18,
-        "goals_against": 12,
-        "group":"A"
+    "Alemania": {
+        "form":[1, 1, 1, 1, 1, 1, 1, 0, 0, 0],
+        "goals_for": 23,
+        "goals_against": 11,
+        "group":"E"
     },
 
-    "Chequia": {
-        "form":[1, 1, 1, 1, 0, 0.5, 0.5, 1, 0, 1],
-        "goals_for": 18,
-        "goals_against": 12,
-        "group":"A"
+    "Curazao": {
+        "form":[0.5, 1, 0.5, 1, 1, 0.5, 0, 0.5, 0.5, 1],
+        "goals_for": 20,
+        "goals_against": 7,
+        "group":"E"
     },
 
-    "Chequia": {
-        "form":[1, 1, 1, 1, 0, 0.5, 0.5, 1, 0, 1],
-        "goals_for": 18,
-        "goals_against": 12,
-        "group":"A"
+    "Costa de Marfil": {
+        "form":[1, 1, 0, 1, 1, 0.5, 1, 1, 0, 1],
+        "goals_for": 20,
+        "goals_against": 7,
+        "group":"E"
     },
 
-    "Chequia": {
-        "form":[1, 1, 1, 1, 0, 0.5, 0.5, 1, 0, 1],
-        "goals_for": 18,
-        "goals_against": 12,
-        "group":"A"
+    "Ecuador": {
+        "form":[0.5, 0.5, 1, 0.5, 0.5, 0.5, 1, 0.5, 0.5, 0.5],
+        "goals_for": 7,
+        "goals_against": 4,
+        "group":"E"
     },
 
-    "Chequia": {
-        "form":[1, 1, 1, 1, 0, 0.5, 0.5, 1, 0, 1],
-        "goals_for": 18,
-        "goals_against": 12,
-        "group":"A"
+    "Países Bajos": {
+        "form":[0.5, 1, 1, 0.5, 1, 1, 1, 0.5, 1, 1],
+        "goals_for": 30,
+        "goals_against": 6,
+        "group":"F"
     },
 
-    "Chequia": {
-        "form":[1, 1, 1, 1, 0, 0.5, 0.5, 1, 0, 1],
-        "goals_for": 18,
-        "goals_against": 12,
-        "group":"A"
+    "Japón": {
+        "form":[1, 1, 1, 1, 1, 0.5, 1, 0.5, 1, 1],
+        "goals_for": 15,
+        "goals_against": 6,
+        "group":"F"
     },
 
-    "Chequia": {
-        "form":[1, 1, 1, 1, 0, 0.5, 0.5, 1, 0, 1],
-        "goals_for": 18,
-        "goals_against": 12,
-        "group":"A"
+    "Suecia": {
+        "form":[1, 1, 0.5, 0, 0, 0, 0, 0.5, 1, 1],
+        "goals_for": 16,
+        "goals_against": 18,
+        "group":"F"
     },
 
-    "Chequia": {
-        "form":[1, 1, 1, 1, 0, 0.5, 0.5, 1, 0, 1],
-        "goals_for": 18,
-        "goals_against": 12,
-        "group":"A"
+    "Túnez": {
+        "form":[0.5, 1, 0.5, 0.5, 0, 1, 1, 0.5, 0, 0.5],
+        "goals_for": 14,
+        "goals_against": 10,
+        "group":"F"
     },
 
-    "Chequia": {
-        "form":[1, 1, 1, 1, 0, 0.5, 0.5, 1, 0, 1],
-        "goals_for": 18,
-        "goals_against": 12,
-        "group":"A"
+    "Bélgica": {
+        "form":[0.5, 1, 1, 0.5, 1, 0.5, 1, 1, 1, 0.5],
+        "goals_for": 35,
+        "goals_against": 10,
+        "group":"G"
     },
 
-    "Chequia": {
-        "form":[1, 1, 1, 1, 0, 0.5, 0.5, 1, 0, 1],
+    "Egipto": {
+        "form":[0.5, 1, 0.5, 0, 1, 1, 0.5, 1, 1, 1],
         "goals_for": 18,
-        "goals_against": 12,
-        "group":"A"
+        "goals_against": 5,
+        "group":"G"
     },
 
-    "Chequia": {
-        "form":[1, 1, 1, 1, 0, 0.5, 0.5, 1, 0, 1],
-        "goals_for": 18,
-        "goals_against": 12,
-        "group":"A"
+    "Irán": {
+        "form":[1, 0, 0.5, 0.5, 0, 1, 0, 0.5, 1, 1],
+        "goals_for": 17,
+        "goals_against": 9,
+        "group":"G"
     },
 
-    "Chequia": {
-        "form":[1, 1, 1, 1, 0, 0.5, 0.5, 1, 0, 1],
-        "goals_for": 18,
-        "goals_against": 12,
-        "group":"A"
+    "Nueva Zelanda": {
+        "form":[0, 0, 0.5, 0, 0, 0, 0, 1, 1, 1],
+        "goals_for": 15,
+        "goals_against": 13,
+        "group":"G"
     },
 
-    "Chequia": {
-        "form":[1, 1, 1, 1, 0, 0.5, 0.5, 1, 0, 1],
-        "goals_for": 18,
-        "goals_against": 12,
-        "group":"A"
+    "España": {
+        "form":[0.5, 1, 0.5, 1, 1, 1, 1, 1, 0.5, 1],
+        "goals_for": 31,
+        "goals_against": 8,
+        "group":"H"
     },
 
-    "Chequia": {
-        "form":[1, 1, 1, 1, 0, 0.5, 0.5, 1, 0, 1],
-        "goals_for": 18,
-        "goals_against": 12,
-        "group":"A"
+    "Cabo Verde": {
+        "form":[0.5, 0.5, 1, 0.5, 1, 1, 0.5, 1, 1, 1],
+        "goals_for": 17,
+        "goals_against": 6,
+        "group":"H"
     },
 
-    "Chequia": {
-        "form":[1, 1, 1, 1, 0, 0.5, 0.5, 1, 0, 1],
-        "goals_for": 18,
-        "goals_against": 12,
-        "group":"A"
+    "Arabia Saudita": {
+        "form":[0, 0, 0.5, 0, 1, 0, 1, 1, 0, 1],
+        "goals_for": 9,
+        "goals_against": 13,
+        "group":"H"
     },
 
-    "Chequia": {
-        "form":[1, 1, 1, 1, 0, 0.5, 0.5, 1, 0, 1],
-        "goals_for": 18,
-        "goals_against": 12,
-        "group":"A"
+    "Uruguay": {
+        "form":[0.5, 0.5, 0, 0.5, 1, 1, 0.5, 1, 1, 0],
+        "goals_for": 10,
+        "goals_against": 9,
+        "group":"H"
     },
 
-    "Chequia": {
-        "form":[1, 1, 1, 1, 0, 0.5, 0.5, 1, 0, 1],
-        "goals_for": 18,
-        "goals_against": 12,
-        "group":"A"
+    "Francia": {
+        "form":[1, 1, 1, 1, 0.5, 1, 1, 1, 1, 0],
+        "goals_for": 27,
+        "goals_against": 11,
+        "group":"I"
     },
 
-    "Chequia": {
-        "form":[1, 1, 1, 1, 0, 0.5, 0.5, 1, 0, 1],
-        "goals_for": 18,
-        "goals_against": 12,
-        "group":"A"
+    "Senegal": {
+        "form":[1, 1, 0, 1, 1, 1, 1, 0.5, 1, 1],
+        "goals_for": 25,
+        "goals_against": 6,
+        "group":"I"
     },
 
-    "Chequia": {
-        "form":[1, 1, 1, 1, 0, 0.5, 0.5, 1, 0, 1],
-        "goals_for": 18,
-        "goals_against": 12,
-        "group":"A"
+    "Irak": {
+        "form":[1, 0, 0, 1, 1, 1, 0.5, 0.5, 1, 1],
+        "goals_for": 11,
+        "goals_against": 7,
+        "group":"I"
     },
 
-    "Chequia": {
-        "form":[1, 1, 1, 1, 0, 0.5, 0.5, 1, 0, 1],
-        "goals_for": 18,
-        "goals_against": 12,
-        "group":"A"
+    "Noruega": {
+        "form":[0.5, 0, 1, 1, 0.5, 1, 1, 1, 1, 1],
+        "goals_for": 31,
+        "goals_against": 6,
+        "group":"I"
     },
 
-    "Chequia": {
-        "form":[1, 1, 1, 1, 0, 0.5, 0.5, 1, 0, 1],
-        "goals_for": 18,
-        "goals_against": 12,
-        "group":"A"
+    "Argentina": {
+        "form":[1, 1, 1, 1, 1, 0, 1, 0.5, 1, 1],
+        "goals_for": 25,
+        "goals_against": 4,
+        "group":"J"
     },
 
-    "Chequia": {
-        "form":[1, 1, 1, 1, 0, 0.5, 0.5, 1, 0, 1],
-        "goals_for": 18,
-        "goals_against": 12,
-        "group":"A"
+    "Argelia": {
+        "form":[0.5, 1, 0, 1, 1, 1, 1, 0.5, 1, 1],
+        "goals_for": 23,
+        "goals_against": 5,
+        "group":"J"
     },
 
-    "Chequia": {
-        "form":[1, 1, 1, 1, 0, 0.5, 0.5, 1, 0, 1],
-        "goals_for": 18,
-        "goals_against": 12,
-        "group":"A"
+    "Austria": {
+        "form":[1, 1, 0.5, 1, 0, 1, 1, 1, 1, 1],
+        "goals_for": 28,
+        "goals_against": 4,
+        "group":"J"
     },
 
-    "Chequia": {
-        "form":[1, 1, 1, 1, 0, 0.5, 0.5, 1, 0, 1],
+    "Jordania": {
+        "form":[0.5, 0.5, 0, 1, 1, 1, 1, 1, 0.5, 0],
         "goals_for": 18,
         "goals_against": 12,
-        "group":"A"
+        "group":"J"
     },
 
-    "Chequia": {
-        "form":[1, 1, 1, 1, 0, 0.5, 0.5, 1, 0, 1],
-        "goals_for": 18,
-        "goals_against": 12,
-        "group":"A"
+    "Portugal": {
+        "form":[1, 0.5, 1, 0, 0.5, 1, 1, 1, 0.5, 1],
+        "goals_for": 26,
+        "goals_against": 10,
+        "group":"K"
     },
 
-    "Chequia": {
-        "form":[1, 1, 1, 1, 0, 0.5, 0.5, 1, 0, 1],
-        "goals_for": 18,
-        "goals_against": 12,
-        "group":"A"
+    "RD Congo": {
+        "form":[1, 0, 1, 0.5, 1, 1, 0.5, 1, 1, 1],
+        "goals_for": 12,
+        "goals_against": 3,
+        "group":"K"
     },
 
-    "Chequia": {
-        "form":[1, 1, 1, 1, 0, 0.5, 0.5, 1, 0, 1],
-        "goals_for": 18,
-        "goals_against": 12,
-        "group":"A"
+    "Uzbekistán": {
+        "form":[0.5, 1, 0, 1, 1, 0.5, 0.5, 1, 0.5, 1],
+        "goals_for": 12,
+        "goals_against": 4,
+        "group":"K"
     },
 
-    "Chequia": {
-        "form":[1, 1, 1, 1, 0, 0.5, 0.5, 1, 0, 1],
-        "goals_for": 18,
-        "goals_against": 12,
-        "group":"A"
+    "Colombia": {
+        "form":[0, 0, 1, 1, 0.5, 1, 1, 1, 0.5, 0.5],
+        "goals_for": 21,
+        "goals_against": 10,
+        "group":"K"
     },
 
-    "Chequia": {
-        "form":[1, 1, 1, 1, 0, 0.5, 0.5, 1, 0, 1],
-        "goals_for": 18,
-        "goals_against": 12,
-        "group":"A"
+    "Inglaterra": {
+        "form":[0, 0.5, 1, 1, 1, 1, 1, 1, 0, 1],
+        "goals_for": 22,
+        "goals_against": 5,
+        "group":"L"
     },
 
-    "Chequia": {
-        "form":[1, 1, 1, 1, 0, 0.5, 0.5, 1, 0, 1],
-        "goals_for": 18,
-        "goals_against": 12,
-        "group":"A"
+    "Croacia": {
+        "form":[0, 1, 1, 1, 1, 0.5, 1, 1, 1, 1],
+        "goals_for": 29,
+        "goals_against": 8,
+        "group":"L"
     },
 
-    "Chequia": {
-        "form":[1, 1, 1, 1, 0, 0.5, 0.5, 1, 0, 1],
-        "goals_for": 18,
-        "goals_against": 12,
-        "group":"A"
+    "Ghana": {
+        "form":[0, 0, 0, 0, 1, 1, 1, 0.5, 1, 0],
+        "goals_for": 15,
+        "goals_against": 13,
+        "group":"L"
     },
 
-    "Chequia": {
-        "form":[1, 1, 1, 1, 0, 0.5, 0.5, 1, 0, 1],
-        "goals_for": 18,
-        "goals_against": 12,
-        "group":"A"
-    },
-
-
-
+    "Panamá": {
+        "form":[1, 0.5, 0, 0.5, 1, 1, 0.5, 1, 0.5, 0.5],
+        "goals_for": 13,
+        "goals_against": 8,
+        "group":"L"
+    }
 }
