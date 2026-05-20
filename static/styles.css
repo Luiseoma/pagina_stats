@@ -6,19 +6,24 @@ body {
     padding: 20px;
 }
 
-h1 {
-    color: #38bdf8;
-}
-
 a {
     color: #22c55e;
     text-decoration: none;
 }
 
+
 .card {
-    background: #1e293b;
+    background: #111827;
     padding: 15px;
     margin: 10px 0;
-    border-radius: 10px;
+    border-radius: 12px;
+    border: 1px solid #1f2937;
 }
 
+h1 {
+    color: #22c55e;
+}
+
+p {
+    font-size: 16px;
+}
