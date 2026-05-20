@@ -1,0 +1,32 @@
+{
+    "Mexico": {
+        "form": [0.5, 0.5, 1, 1, 1, 0, 0.5, 0.5, 0, 0.5],
+        "goals_for": 11,
+        "goals_against": 10,
+        "group": "A"
+    },
+
+    "Sudáfrica": {
+        "form": [0, 0.5, 0, 1, 0, 1, 1, 1, 1, 0.5],
+        "goals_for": 15,
+        "goals_against": 10,
+        "group": "A"
+    },
+
+    "Corea del Sur": {
+        "form":[0, 0, 1, 1, 1, 0, 0.5, 1, 0, 1],
+        "goals_for": 11,
+        "goals_against": 12,
+        "group":"A"
+    },
+
+    "Chequia": {
+        "form":[1, 1, 1, 1, 0, 0.5, 0.5, 1, 0, 1],
+        "goals_for": 18,
+        "goals_against": 12,
+        "group":"A"
+    }
+
+
+
+}
