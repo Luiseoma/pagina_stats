@@ -49,6 +49,7 @@
     },
 
     "Catar": {
+        "flag": "qatar.svg",
         "form":[0, 0.5,0, 0, 1, 0, 0, 0.5, 0, 0],
         "goals_for": 7,
         "goals_against": 18,
@@ -56,14 +57,15 @@
     },
 
     "Suiza": {
+        "flag": "switzerland.svg",
         "form":[0.5, 0, 0.5, 1, 0.5, 1, 1, 1, 1, 1],
         "goals_for": 25,
         "goals_against": 8,
         "group":"B"
     },
 
-
     "Brasil": {
+        "flag": "brazil.svg",
         "form":[1, 0, 0.5, 1, 0, 1, 0, 1, 1, 0.5],
         "goals_for": 18,
         "goals_against": 8,
@@ -72,6 +74,7 @@
 
 
     "Marruecos": {
+        "flag": "morocco.svg",
         "form":[1, 0, 1, 0.5, 1, 1, 1, 0.5, 1, 1],
         "goals_for": 18,
         "goals_against": 5,
@@ -80,6 +83,7 @@
 
 
     "Haití": {
+        "flag": "haiti.svg",
         "form":[0.5, 0, 1, 1, 0, 1, 0.5, 0, 0, 0.5],
         "goals_for": 12,
         "goals_against": 10,
@@ -88,6 +92,7 @@
 
 
     "Escocia": {
+        "flag": "scotland.svg",
         "form":[0, 0, 1, 0, 1, 1, 1, 0.5, 1, 0],
         "goals_for": 18,
         "goals_against": 12,
@@ -96,6 +101,7 @@
 
 
     "Estados Unidos": {
+        "flag": "unitedstates.svg",
         "form":[0, 0, 1, 1, 1, 0.5, 1, 0, 0, 1],
         "goals_for": 17,
         "goals_against": 16,
@@ -104,6 +110,7 @@
 
 
     "Paraguay": {
+        "paraguay": "paraguay.svg",
         "form":[0, 1, 1, 0, 0, 0.5, 1, 0.5, 0, 1],
         "goals_for": 10,
         "goals_against": 10,
@@ -111,6 +118,7 @@
     },
 
     "Australia": {
+        "flag": "australia.svg",
         "form":[0, 0, 0, 1, 1, 1, 1, 1, 1, 1],
         "goals_for": 16,
         "goals_against": 9,
@@ -118,6 +126,7 @@
     },
 
     "Turquía": {
+        "flag": "turkey.svg",
         "form":[1, 1, 0.5, 1, 1, 1, 0, 1, 0, 1],
         "goals_for": 21,
         "goals_against": 14,
@@ -125,6 +134,7 @@
     },
 
     "Alemania": {
+        "flag": "germany.svg",
         "form":[1, 1, 1, 1, 1, 1, 1, 0, 0, 0],
         "goals_for": 23,
         "goals_against": 11,
@@ -132,6 +142,7 @@
     },
 
     "Curazao": {
+        "flag": "curazao.svg",
         "form":[0.5, 1, 0.5, 1, 1, 0.5, 0, 0.5, 0.5, 1],
         "goals_for": 20,
         "goals_against": 7,
@@ -139,6 +150,7 @@
     },
 
     "Costa de Marfil": {
+        "flag": "ivorycoast.svg",
         "form":[1, 1, 0, 1, 1, 0.5, 1, 1, 0, 1],
         "goals_for": 20,
         "goals_against": 7,
@@ -146,6 +158,7 @@
     },
 
     "Ecuador": {
+        "flag": "ecuador.svg",
         "form":[0.5, 0.5, 1, 0.5, 0.5, 0.5, 1, 0.5, 0.5, 0.5],
         "goals_for": 7,
         "goals_against": 4,
@@ -153,6 +166,7 @@
     },
 
     "Países Bajos": {
+        "flag:": "netherlands.svg",
         "form":[0.5, 1, 1, 0.5, 1, 1, 1, 0.5, 1, 1],
         "goals_for": 30,
         "goals_against": 6,
@@ -160,6 +174,7 @@
     },
 
     "Japón": {
+        "flag": "japan.svg",
         "form":[1, 1, 1, 1, 1, 0.5, 1, 0.5, 1, 1],
         "goals_for": 15,
         "goals_against": 6,
@@ -167,6 +182,7 @@
     },
 
     "Suecia": {
+        "flag": "sweden.svg",
         "form":[1, 1, 0.5, 0, 0, 0, 0, 0.5, 1, 1],
         "goals_for": 16,
         "goals_against": 18,
@@ -174,6 +190,7 @@
     },
 
     "Túnez": {
+        "flag": "tunisia.svg",
         "form":[0.5, 1, 0.5, 0.5, 0, 1, 1, 0.5, 0, 0.5],
         "goals_for": 14,
         "goals_against": 10,
@@ -181,6 +198,7 @@
     },
 
     "Bélgica": {
+        "flag": "belgium.svg",
         "form":[0.5, 1, 1, 0.5, 1, 0.5, 1, 1, 1, 0.5],
         "goals_for": 35,
         "goals_against": 10,
@@ -188,6 +206,7 @@
     },
 
     "Egipto": {
+        "flag": "egypt.svg",
         "form":[0.5, 1, 0.5, 0, 1, 1, 0.5, 1, 1, 1],
         "goals_for": 18,
         "goals_against": 5,
@@ -195,6 +214,7 @@
     },
 
     "Irán": {
+        "flag": "iran.svg",
         "form":[1, 0, 0.5, 0.5, 0, 1, 0, 0.5, 1, 1],
         "goals_for": 17,
         "goals_against": 9,
@@ -202,6 +222,7 @@
     },
 
     "Nueva Zelanda": {
+        "flag": "newzealand,svg",
         "form":[0, 0, 0.5, 0, 0, 0, 0, 1, 1, 1],
         "goals_for": 15,
         "goals_against": 13,
@@ -209,6 +230,7 @@
     },
 
     "España": {
+        "flag": "spain.svg",
         "form":[0.5, 1, 0.5, 1, 1, 1, 1, 1, 0.5, 1],
         "goals_for": 31,
         "goals_against": 8,
@@ -216,6 +238,7 @@
     },
 
     "Cabo Verde": {
+        "flag": "capeverde.svg",
         "form":[0.5, 0.5, 1, 0.5, 1, 1, 0.5, 1, 1, 1],
         "goals_for": 17,
         "goals_against": 6,
@@ -223,6 +246,7 @@
     },
 
     "Arabia Saudita": {
+        "flag": "saudiarabia.svg",
         "form":[0, 0, 0.5, 0, 1, 0, 1, 1, 0, 1],
         "goals_for": 9,
         "goals_against": 13,
@@ -230,6 +254,7 @@
     },
 
     "Uruguay": {
+        "flag": "uruguay.svg",
         "form":[0.5, 0.5, 0, 0.5, 1, 1, 0.5, 1, 1, 0],
         "goals_for": 10,
         "goals_against": 9,
@@ -237,6 +262,7 @@
     },
 
     "Francia": {
+        "flag": "france.svg",
         "form":[1, 1, 1, 1, 0.5, 1, 1, 1, 1, 0],
         "goals_for": 27,
         "goals_against": 11,
@@ -244,6 +270,7 @@
     },
 
     "Senegal": {
+        "flag": "senegal.svg",
         "form":[1, 1, 0, 1, 1, 1, 1, 0.5, 1, 1],
         "goals_for": 25,
         "goals_against": 6,
@@ -251,6 +278,7 @@
     },
 
     "Irak": {
+        "flag": "iraq.svg",
         "form":[1, 0, 0, 1, 1, 1, 0.5, 0.5, 1, 1],
         "goals_for": 11,
         "goals_against": 7,
@@ -258,6 +286,7 @@
     },
 
     "Noruega": {
+        "flag": "norway.svg",
         "form":[0.5, 0, 1, 1, 0.5, 1, 1, 1, 1, 1],
         "goals_for": 31,
         "goals_against": 6,
@@ -265,6 +294,7 @@
     },
 
     "Argentina": {
+        "flag": "argentina.svg",
         "form":[1, 1, 1, 1, 1, 0, 1, 0.5, 1, 1],
         "goals_for": 25,
         "goals_against": 4,
@@ -272,6 +302,7 @@
     },
 
     "Argelia": {
+        "flag": "algeria.svg",
         "form":[0.5, 1, 0, 1, 1, 1, 1, 0.5, 1, 1],
         "goals_for": 23,
         "goals_against": 5,
@@ -279,6 +310,7 @@
     },
 
     "Austria": {
+        "flag": "austria.svg",
         "form":[1, 1, 0.5, 1, 0, 1, 1, 1, 1, 1],
         "goals_for": 28,
         "goals_against": 4,
@@ -286,6 +318,7 @@
     },
 
     "Jordania": {
+        "flag": "jordan.svg",
         "form":[0.5, 0.5, 0, 1, 1, 1, 1, 1, 0.5, 0],
         "goals_for": 18,
         "goals_against": 12,
@@ -293,6 +326,7 @@
     },
 
     "Portugal": {
+        "flag": "portugal.svg",
         "form":[1, 0.5, 1, 0, 0.5, 1, 1, 1, 0.5, 1],
         "goals_for": 26,
         "goals_against": 10,
@@ -300,6 +334,7 @@
     },
 
     "RD Congo": {
+        "flag": "drcongo.svg",
         "form":[1, 0, 1, 0.5, 1, 1, 0.5, 1, 1, 1],
         "goals_for": 12,
         "goals_against": 3,
@@ -307,6 +342,7 @@
     },
 
     "Uzbekistán": {
+        "flag": "uzbekistan.svg",
         "form":[0.5, 1, 0, 1, 1, 0.5, 0.5, 1, 0.5, 1],
         "goals_for": 12,
         "goals_against": 4,
@@ -314,6 +350,7 @@
     },
 
     "Colombia": {
+        "flag": "colombia.svg",
         "form":[0, 0, 1, 1, 0.5, 1, 1, 1, 0.5, 0.5],
         "goals_for": 21,
         "goals_against": 10,
@@ -321,6 +358,7 @@
     },
 
     "Inglaterra": {
+        "flag": "england.svg",
         "form":[0, 0.5, 1, 1, 1, 1, 1, 1, 0, 1],
         "goals_for": 22,
         "goals_against": 5,
@@ -328,6 +366,7 @@
     },
 
     "Croacia": {
+        "flag": "croatia.svg",
         "form":[0, 1, 1, 1, 1, 0.5, 1, 1, 1, 1],
         "goals_for": 29,
         "goals_against": 8,
@@ -335,6 +374,7 @@
     },
 
     "Ghana": {
+        "flag": "ghana.svg",
         "form":[0, 0, 0, 0, 1, 1, 1, 0.5, 1, 0],
         "goals_for": 15,
         "goals_against": 13,
@@ -342,6 +382,7 @@
     },
 
     "Panamá": {
+        "flag": "panama.svg",
         "form":[1, 0.5, 0, 0.5, 1, 1, 0.5, 1, 0.5, 0.5],
         "goals_for": 13,
         "goals_against": 8,
