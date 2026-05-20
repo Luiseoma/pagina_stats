@@ -1,6 +1,7 @@
 <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
 
 <div class="container">
+
     {% if no_teams %}
 
         <h1>Partido aún sin equipos definidos</h1>
@@ -31,7 +32,16 @@
 
         <div class="team-stats">
 
-            <h3>{{ match.team1 }}</h3>
+            <h3 class="team-title">
+
+                <img
+                    src="{{ url_for('static', filename='flags/' + team1_data.flag) }}"
+                    class="flag"
+                >
+
+                {{ match.team1 }}
+
+            </h3>
 
             <p>Grupo: {{ team1_data.group }}</p>
 
@@ -51,7 +61,16 @@
 
         <div class="team-stats">
 
-            <h3>{{ match.team2 }}</h3>
+            <h3 class="team-title">
+
+                <img
+                    src="{{ url_for('static', filename='flags/' + team2_data.flag) }}"
+                    class="flag"
+                >
+
+                {{ match.team2 }}
+
+            </h3>
 
             <p>Grupo: {{ team2_data.group }}</p>
 
@@ -66,6 +85,7 @@
             </p>
 
         </div>
-</div>
 
-{% endif %}
+    {% endif %}
+
+</div>

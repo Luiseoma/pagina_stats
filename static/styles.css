@@ -77,3 +77,15 @@ hr {
     color: white;
     font-weight: bold;
 }
+
+.team-title {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.flag {
+    width: 50px;
+    height: auto;
+    border-radius: 5px;
+}
