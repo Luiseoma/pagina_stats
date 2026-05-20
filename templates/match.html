@@ -1,0 +1,11 @@
+<link rel="stylesheet" href="{{ url_for('static', filename='styles.css')}}">
+
+<h1>{{ match.team1 }} vs {{ match.team2 }}</h1>
+
+<h3>Probabilidades</h3>
+
+<ul>
+  <li>{{ match.team1 }}: {{ match.prob["1"] }}%</li>
+  <li>Empate: {{ match.prob["X"] }}%</li>
+  <li>{{ match.team2 }}: {{ match.prob["2"] }}%</li>
+</ul>

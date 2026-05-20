@@ -1,0 +1,9 @@
+<h1>Partidos disponibles</h1>
+
+{% for id, match in matches.items() %}
+    <p>
+        <a href="/match/{{ id }}">
+            {{ match.team1 }} vs {{ match.team2 }}
+        </a>
+    </p>
+{% endfor %}
