@@ -1063,7 +1063,7 @@
     "score2": 0,
     "date": "2026-07-09",
     "hour": "16:00",
-    "stage": "Round of 8",
+    "stage": "Quarters-finals",
     "status": "upcoming"
     },
     {
@@ -1074,7 +1074,7 @@
     "score2": 0,
     "date": "2026-07-10",
     "hour": "15:00",
-    "stage": "Round of 8",
+    "stage": "Quarters-finals",
     "status": "upcoming"
     },
     {
@@ -1085,7 +1085,7 @@
     "score2": 0,
     "date": "2026-07-11",
     "hour": "17:00",
-    "stage": "Round of 8",
+    "stage": "Quarters-finals",
     "status": "upcoming"
     },
     {
@@ -1096,7 +1096,7 @@
     "score2": 0,
     "date": "2026-07-11",
     "hour": "21:00",
-    "stage": "Round of 8",
+    "stage": "Quarters-finals",
     "status": "upcoming"
     },
     {
@@ -1107,7 +1107,7 @@
     "score2": 0,
     "date": "2026-07-14",
     "hour": "15:00",
-    "stage": "Round of 4",
+    "stage": "Semi-finals",
     "status": "upcoming"
     },
     {
@@ -1118,7 +1118,7 @@
     "score2": 0,
     "date": "2026-07-15",
     "hour": "15:00",
-    "stage": "Round of 4",
+    "stage": "Semi-finals",
     "status": "upcoming"
     },
     {
@@ -1129,7 +1129,7 @@
     "score2": 0,
     "date": "2026-07-19",
     "hour": "15:00",
-    "stage": "Round of 2",
+    "stage": "Final",
     "status": "upcoming"
     },
     {
@@ -1140,7 +1140,7 @@
     "score2": 0,
     "date": "2026-07-18",
     "hour": "17:00",
-    "stage": "Round of 2",
+    "stage": "Third Place",
     "status": "upcoming"
     }
 ]    

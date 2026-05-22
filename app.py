@@ -1,4 +1,5 @@
 from flask import Flask, render_template
+from collections import defaultdict
 import json
 
 app = Flask(__name__)
@@ -31,7 +32,17 @@ matches = {str(match["id"]): match for match in matches_list}
 
 @app.route("/")
 def home():
-    return render_template("home.html", matches=matches_list)
+
+    matches_by_date = defaultdict(list)
+
+    for match in matches_list:
+        matches_by_date[match["date"]].append(match)
+
+    return render_template(
+        "home.html",
+        matches_by_date=matches_by_date,
+        teams=teams
+    )
 
 
 # =========================
@@ -81,7 +92,6 @@ def match(id):
         no_teams=False
     )
 
-    print(teams["Paraguay"])
 
 
 # =========================
