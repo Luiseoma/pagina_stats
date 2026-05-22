@@ -81,6 +81,8 @@ def match(id):
         no_teams=False
     )
 
+    print(teams["Paraguay"])
+
 
 # =========================
 # RUN APP
