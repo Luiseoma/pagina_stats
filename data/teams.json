@@ -110,7 +110,7 @@
 
 
     "Paraguay": {
-        "paraguay": "paraguay.svg",
+        "flag": "paraguay.svg",
         "form":[0, 1, 1, 0, 0, 0.5, 1, 0.5, 0, 1],
         "goals_for": 10,
         "goals_against": 10,
@@ -166,7 +166,7 @@
     },
 
     "Países Bajos": {
-        "flag:": "netherlands.svg",
+        "flag": "netherlands.svg",
         "form":[0.5, 1, 1, 0.5, 1, 1, 1, 0.5, 1, 1],
         "goals_for": 30,
         "goals_against": 6,
@@ -222,7 +222,7 @@
     },
 
     "Nueva Zelanda": {
-        "flag": "newzealand,svg",
+        "flag": "newzealand.svg",
         "form":[0, 0, 0.5, 0, 0, 0, 0, 1, 1, 1],
         "goals_for": 15,
         "goals_against": 13,
