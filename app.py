@@ -11,6 +11,76 @@ app = Flask(__name__)
 def fuerza(form):
     return sum(form) / len(form)
 
+#==========================
+# TABLA DE GRUPOS
+#==========================
+
+def generar_tablas(matches_list):
+    tablas ={}
+
+    for match in matches_list:
+        if group not in match:
+            continue
+        group = match ["group"]
+
+        if group not in tablas:
+            tablas[group] = {}
+
+        team1 = match ["team1"]
+        team2 = match ["team2"]
+
+        for team in [team1,team2]:
+            if team not in tablas[group]:
+                tablas[group][team] = {
+                    "pts": 0,
+                    "pj": 0,
+                    "g": 0,
+                    "e": 0,
+                    "p": 0,
+                    "gf": 0,
+                    "gc": 0,
+                    "dg": 0,
+                }
+        score1 = match["score1"]
+        score2 = match["score2"]
+
+        tablas[group][team1]["pj"] +=1
+        tablas[group][team2]["pj"] +=1
+
+        tablas[group][team1]["gf"] += score1
+        tablas[group][team2]["gc"] += score2
+
+        tablas[group][team1]["gf"] += score2
+        tablas[group][team2]["gc"] += score1
+
+        if score1 > score2:
+            tablas[group][team1]["pts"] += 3
+            tablas[group][team1]["g"] += 1
+
+            tablas[group][team2]["p"] += 1
+
+        elif score2 > score1:
+            tablas[group][team2]["pts"] += 3
+            tablas[group][team2]["g"] +=1
+
+            tablas[group][team1]["p"] +=1
+
+        else:
+            tablas[group][team1]["pts"] +=1
+            tablas[group][team2]["pts"] +=1
+
+            tablas[group][team1]["e"] +=1
+            tablas[group][team2]["e"] +=1
+
+    for group in tablas:
+        for team in tablas[group]:
+
+            tablas[group][team]["dg"] = (
+                tablas[group][team]["gf"]
+                - tablas[group][team]["gc"]
+            )
+          
+    return tablas          
 
 # =========================
 # LEER JSONS
@@ -44,6 +114,18 @@ def home():
         teams=teams
     )
 
+#==========================
+#TABLES PAGE
+#==========================
+
+@app.route("/tables")
+def tables ():
+    tablas = generar_tablas(matches_list)
+
+    return render_template(
+        "tables.html",
+        tablas=tablas
+    )
 
 # =========================
 # MATCH PAGE

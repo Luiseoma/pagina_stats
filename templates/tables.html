@@ -1,0 +1,47 @@
+<link rel="stylesheet" href="{{ url_for('static', filename='styles.css')}}">
+
+<div class='maincontainer'>
+    <h1>Tablas de grupos</h1>
+
+    {% for group, teams_table in tablas.items() %}
+
+    <div class="group-table">
+        <h2>Grupo {{ group }}</h2>
+         <table>
+            <tr>
+                <th>Equipo</th>
+                <th>PTS</th>
+                <th>PJ</th>
+                <th>G</th>
+                <th>E</th>
+                <th>P</th>
+                <th>GF</th>
+                <th>GC</th>
+                <th>DG</th>
+            </tr>
+
+            {% for team, stats in team_tables.item() %}
+
+            <tr>
+
+                <td>{{ team }}</td>
+                <td>{{ stats.pts }}</td>
+                <td>{{ stats.pj }}</td>
+                <td>{{ stats.g }}</td>
+                <td>{{ stats.e }}</td>
+                <td>{{ stats.p }}</td>
+                <td>{{ stats.gf }}</td>
+                <td>{{ stats.gc }}</td>
+                <td>{{ stats.dg }}</td>
+            
+            </tr>
+
+            {% endfor %}
+
+         </table>
+
+    </div>
+
+    {% endfor %}
+
+</div>
