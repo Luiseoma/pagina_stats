@@ -16,20 +16,25 @@ def fuerza(form):
 #==========================
 
 def generar_tablas(matches_list):
-    tablas ={}
+    tablas = {}
 
     for match in matches_list:
-        if group not in match:
+
+        group = match.get("group")
+
+        if not group:
             continue
-        group = match ["group"]
+
+        group = group.strip().upper()
 
         if group not in tablas:
             tablas[group] = {}
 
-        team1 = match ["team1"]
-        team2 = match ["team2"]
+        team1 = match["team1"]
+        team2 = match["team2"]
 
-        for team in [team1,team2]:
+        # crear equipos si no existen
+        for team in [team1, team2]:
             if team not in tablas[group]:
                 tablas[group][team] = {
                     "pts": 0,
@@ -41,46 +46,47 @@ def generar_tablas(matches_list):
                     "gc": 0,
                     "dg": 0,
                 }
+
+        # si no hay resultado, no calcular
+        if match["score1"] is None or match["score2"] is None:
+            continue
+
         score1 = match["score1"]
         score2 = match["score2"]
 
-        tablas[group][team1]["pj"] +=1
-        tablas[group][team2]["pj"] +=1
+        tablas[group][team1]["pj"] += 1
+        tablas[group][team2]["pj"] += 1
 
         tablas[group][team1]["gf"] += score1
-        tablas[group][team2]["gc"] += score2
+        tablas[group][team1]["gc"] += score2
 
-        tablas[group][team1]["gf"] += score2
+        tablas[group][team2]["gf"] += score2
         tablas[group][team2]["gc"] += score1
 
         if score1 > score2:
             tablas[group][team1]["pts"] += 3
             tablas[group][team1]["g"] += 1
-
             tablas[group][team2]["p"] += 1
 
         elif score2 > score1:
             tablas[group][team2]["pts"] += 3
-            tablas[group][team2]["g"] +=1
-
-            tablas[group][team1]["p"] +=1
+            tablas[group][team2]["g"] += 1
+            tablas[group][team1]["p"] += 1
 
         else:
-            tablas[group][team1]["pts"] +=1
-            tablas[group][team2]["pts"] +=1
+            tablas[group][team1]["pts"] += 1
+            tablas[group][team2]["pts"] += 1
+            tablas[group][team1]["e"] += 1
+            tablas[group][team2]["e"] += 1
 
-            tablas[group][team1]["e"] +=1
-            tablas[group][team2]["e"] +=1
-
+    # diferencia de goles
     for group in tablas:
         for team in tablas[group]:
-
             tablas[group][team]["dg"] = (
-                tablas[group][team]["gf"]
-                - tablas[group][team]["gc"]
+                tablas[group][team]["gf"] - tablas[group][team]["gc"]
             )
-          
-    return tablas          
+    print(repr(group))
+    return tablas
 
 # =========================
 # LEER JSONS
@@ -121,7 +127,7 @@ def home():
 @app.route("/tables")
 def tables ():
     tablas = generar_tablas(matches_list)
-
+    tablas = dict(sorted(tablas.items()))
     return render_template(
         "tables.html",
         tablas=tablas
