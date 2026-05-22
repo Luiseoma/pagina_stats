@@ -130,7 +130,8 @@ def tables ():
     tablas = dict(sorted(tablas.items()))
     return render_template(
         "tables.html",
-        tablas=tablas
+        tablas=tablas,
+        teams=teams
     )
 
 # =========================

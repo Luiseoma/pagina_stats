@@ -179,3 +179,8 @@ tr:not(:last-child) {
     background-color: #334155;
 }
 
+.team-cell {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}

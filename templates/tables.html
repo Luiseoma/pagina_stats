@@ -24,7 +24,10 @@
 
             <tr>
 
-                <td>{{ team }}</td>
+                <td class="team-cell">
+                     <img src="{{ url_for('static', filename='flags/' + teams[team]['flag']) }}" class="flag-small">
+                     {{ team }}
+                </td>
                 <td>{{ stats.pts }}</td>
                 <td>{{ stats.pj }}</td>
                 <td>{{ stats.g }}</td>
