@@ -3,48 +3,56 @@
 <div class='maincontainer'>
     <h1>Tablas de grupos</h1>
 
-    {% for group, teams_table in tablas.items() %}
+    <div class="groups-section">
 
-    <div class="group-table">
-        <h2>Grupo {{ group }}</h2>
-         <table>
-            <tr>
-                <th>Equipo</th>
-                <th>PTS</th>
-                <th>PJ</th>
-                <th>G</th>
-                <th>E</th>
-                <th>P</th>
-                <th>GF</th>
-                <th>GC</th>
-                <th>DG</th>
-            </tr>
+        {% for group, teams_table in tablas.items() %}
 
-            {% for team, stats in teams_table.items() %}
+        <div class="group-table">
+            <h2>Grupo {{ group }}</h2>
+            <table>
+                <tr>
+                    <th>Equipo</th>
+                    <th>PTS</th>
+                    <th>PJ</th>
+                    <th>G</th>
+                    <th>E</th>
+                    <th>P</th>
+                    <th>GF</th>
+                    <th>GC</th>
+                    <th>DG</th>
+                </tr>
 
-            <tr>
+                {% for team, stats in teams_table.items() %}
 
-                <td class="team-cell">
-                     <img src="{{ url_for('static', filename='flags/' + teams[team]['flag']) }}" class="flag-small">
-                     {{ team }}
-                </td>
-                <td>{{ stats.pts }}</td>
-                <td>{{ stats.pj }}</td>
-                <td>{{ stats.g }}</td>
-                <td>{{ stats.e }}</td>
-                <td>{{ stats.p }}</td>
-                <td>{{ stats.gf }}</td>
-                <td>{{ stats.gc }}</td>
-                <td>{{ stats.dg }}</td>
-            
-            </tr>
+                <tr>
 
-            {% endfor %}
+                    <td class="team-cell">
 
-         </table>
+                        <div class="status-box status-{{ stats.status }}"></div>
+
+                        <img src="{{ url_for('static', filename='flags/' + teams[team]['flag']) }}" class="flag-small">
+
+                        <span class="team-name">{{ team }}</span>
+
+                    </td>
+                    <td>{{ stats.pts }}</td>
+                    <td>{{ stats.pj }}</td>
+                    <td>{{ stats.g }}</td>
+                    <td>{{ stats.e }}</td>
+                    <td>{{ stats.p }}</td>
+                    <td>{{ stats.gf }}</td>
+                    <td>{{ stats.gc }}</td>
+                    <td>{{ stats.dg }}</td>
+                
+                </tr>
+
+                {% endfor %}
+
+            </table>
+
+        </div>
+
+        {% endfor %}
 
     </div>
-
-    {% endfor %}
-
 </div>

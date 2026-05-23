@@ -85,8 +85,73 @@ def generar_tablas(matches_list):
             tablas[group][team]["dg"] = (
                 tablas[group][team]["gf"] - tablas[group][team]["gc"]
             )
-    print(repr(group))
-    return tablas
+
+    # ordenar grupos
+    for group in tablas:
+        tablas[group] = dict(
+            sorted(
+                tablas[group].items(),
+                key=lambda item: (
+                    item[1]["pts"],
+                    item[1]["dg"],
+                    item[1]["gf"],
+                ),
+                reverse=True
+            )
+        )
+
+    # estados (CLASIFICADO / MEJOR TERCERO / ELIMINADO)
+    CLASIFICAN_DIRECTO = 2
+    MEJOR_TERCERO = 8 
+
+    terceros = []
+    
+    for group in tablas:
+        equipos = list(tablas[group].items())
+
+        for i, (team, stats) in enumerate(equipos):
+            if i == 2:  # tercer lugar del grupo
+                terceros.append((team, stats, group))
+
+    # 2. ordenar terceros globalmente
+    terceros_ordenados = sorted(
+        terceros,
+        key=lambda x: (
+            x[1]["pts"],
+            x[1]["dg"],
+            x[1]["gf"]
+        ),
+        reverse=True
+    )
+
+    mejores_terceros = terceros_ordenados[:MEJOR_TERCERO]
+
+    mejores_terceros_nombres = [t[0] for t in mejores_terceros]
+
+    for group in tablas:
+        equipos = list(tablas[group].items())
+
+        for i, (team, stats) in enumerate(equipos):
+
+            if i < CLASIFICAN_DIRECTO:
+                stats["status"] = "clasificado"
+
+            elif i == CLASIFICAN_DIRECTO:
+                # solo es tercero si está en la lista global
+                if team in mejores_terceros_nombres:
+                    stats["status"] = "tercero"
+                else:
+                    stats["status"] = "eliminado"
+
+            else:
+                stats["status"] = "eliminado"       
+    
+    clasificados = []
+
+    for group in tablas:
+        equipos = list(tablas[group].items())
+
+    return tablas, clasificados
 
 # =========================
 # LEER JSONS
@@ -126,12 +191,13 @@ def home():
 
 @app.route("/tables")
 def tables ():
-    tablas = generar_tablas(matches_list)
+    tablas,clasificados = generar_tablas(matches_list)
     tablas = dict(sorted(tablas.items()))
     return render_template(
         "tables.html",
         tablas=tablas,
-        teams=teams
+        teams=teams,
+        clasificados=clasificados
     )
 
 # =========================
