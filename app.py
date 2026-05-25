@@ -1,10 +1,11 @@
 from flask import Flask, render_template, request, redirect
 from collections import defaultdict
 import json
+import os
 
 app = Flask(__name__)
 
-admin_key = "statsprogram"
+admin_key = os.getenv("admin_key","statsprogram")
 
 # =========================
 # FUNCIONES
@@ -629,4 +630,4 @@ def update_match(match_id):
 # =========================
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(host="0.0.0.0", port=10000)
