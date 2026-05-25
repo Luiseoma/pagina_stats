@@ -1,0 +1,46 @@
+<link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+
+<div class="container-admin">
+    <h1>Panel de Administrador</h1>
+</div>
+
+<div class="groups-section">
+    {% for match in matches %}
+
+    <div class="card">
+
+        <h2>
+            {{ match.team1 }} vs {{ match.team2 }}
+        </h2>
+
+        <form
+            action="/update_match/{{ match.id}}?key={{ key}}"
+            method="POST"
+            >
+            
+            <p>Resultado</p>
+
+            <input
+                type="number"
+                name="score1"
+                value="{{ match.score1 if match.score1 is not none else 0}}"
+            >
+
+            <input
+                type="number"
+                name="score2"
+                value="{{ match.score2 if match.score2 is not none else 0}}"
+            >
+
+            <br></br>
+
+            <button type="submit">
+                Guardar cambios
+            </button>
+
+        </form>
+    </div>
+
+    {% endfor %}
+</div>
+

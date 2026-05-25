@@ -1,6 +1,7 @@
 {
     "México": {
         "flag": "mexico.svg",
+        "rating": 1681.03,
         "form": [0.5, 0.5, 1, 1, 1, 0, 0.5, 0.5, 0, 0.5],
         "goals_for": 11,
         "goals_against": 10,
@@ -9,6 +10,7 @@
 
     "Sudáfrica": {
         "flag": "southafrica.svg",
+        "rating": 1429.73,
         "form": [0, 0.5, 0, 1, 0, 1, 1, 1, 1, 0.5],
         "goals_for": 15,
         "goals_against": 10,

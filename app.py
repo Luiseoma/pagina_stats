@@ -1,15 +1,17 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request, redirect
 from collections import defaultdict
 import json
 
 app = Flask(__name__)
+
+admin_key = "statsprogram"
 
 # =========================
 # FUNCIONES
 # =========================
 
 def fuerza(form):
-    return sum(form) / len(form)
+    return sum(form) / len(form) *10
 
 # =========================
 # TABLAS
@@ -414,14 +416,8 @@ def generar_final(matches_list):
 # LEER JSONS
 # =========================
 
-with open("data/matches.json", "r", encoding="utf-8") as file:
-    matches_list = json.load(file)
-
 with open("data/teams.json", "r", encoding="utf-8") as file:
     teams = json.load(file)
-
-# Convertir matches en diccionario para búsquedas rápidas
-matches = {str(match["id"]): match for match in matches_list}
 
 
 # =========================
@@ -430,6 +426,9 @@ matches = {str(match["id"]): match for match in matches_list}
 
 @app.route("/")
 def home():
+
+    with open("data/matches.json", "r", encoding="utf-8") as file:
+        matches_list = json.load(file)
 
     tablas, clasificados = generar_tablas(matches_list)
 
@@ -466,6 +465,9 @@ def home():
 @app.route("/tables")
 def tables ():
 
+    with open("data/matches.json", "r", encoding="utf-8") as file:
+        matches_list = json.load(file)
+
     #Calcular grupos
     tablas,clasificados = generar_tablas(matches_list)
 
@@ -485,6 +487,14 @@ def tables ():
 
 @app.route("/match/<id>")
 def match(id):
+
+    with open("data/matches.json", "r", encoding="utf-8") as file:
+        matches_list = json.load(file)
+
+    matches = {
+        str(match["id"]): match
+        for match in matches_list
+    }
 
     match = matches[id]
 
@@ -506,19 +516,54 @@ def match(id):
     team1_data = teams.get(match["team1"])
     team2_data = teams.get(match["team2"])
 
+    #Por si falta data
+    if not team1_data or not team2_data:
+        return "Error: equipo no encontrado"
+
     # Calcular fuerza
-    f1 = fuerza(team1_data["form"])
-    f2 = fuerza(team2_data["form"])
 
-    # Probabilidad empate base
-    base_draw = 0.25
+    import math
 
-    prob_draw = round(base_draw * 100, 1)
+    # =========================
+    # RATING BASE (FIFA manual)
+    # =========================
+    r1 = team1_data["rating"]
+    r2 = team2_data["rating"]
 
-    remaining = 100 - prob_draw
+    # =========================
+    # FORMA (AJUSTE PEQUEÑO)
+    # =========================
+    form1 = sum(team1_data["form"]) / len(team1_data["form"])
+    form2 = sum(team2_data["form"]) / len(team2_data["form"])
 
-    prob_team1 = round((f1 / (f1 + f2)) * remaining, 1)
-    prob_team2 = round((f2 / (f1 + f2)) * remaining, 1)
+    form_bonus1 = (form1 - 0.5) * 100
+    form_bonus2 = (form2 - 0.5) * 100
+
+    # rating final
+    f1 = r1 + form_bonus1
+    f2 = r2 + form_bonus2
+
+    # =========================
+    # ELO PROBABILITY
+    # =========================
+    prob_team1 = 1 / (1 + 10 ** ((f2 - f1) / 400))
+    prob_team2 = 1 - prob_team1
+
+    # =========================
+    # EMPATE (dinámico realista)
+    # =========================
+    diff = abs(f1 - f2)
+
+    prob_draw = max(0.10, 0.28 - diff * 0.0002)
+
+    # =========================
+    # NORMALIZAR A 100%
+    # =========================
+    total = prob_team1 + prob_team2 + prob_draw
+
+    prob_team1 = round(prob_team1 / total * 100, 1)
+    prob_team2 = round(prob_team2 / total * 100, 1)
+    prob_draw = round(prob_draw / total * 100, 1)
 
     return render_template(
         "match.html",
@@ -531,7 +576,53 @@ def match(id):
         no_teams=False
     )
 
+#==========================
+#ADMIN PAGE
+#==========================
 
+@app.route("/admin")
+def admin():
+
+    key = request.args.get("key")
+
+    if key != admin_key:
+        return "NO AUTORIZADO", 403
+
+    with open("data/matches.json", "r", encoding="utf-8") as f:
+        matches = json.load(f)
+
+    return render_template(
+        "admin.html",
+        matches=matches,
+        key=admin_key
+)
+
+@app.route("/update_match/<int:match_id>", methods=["POST"])
+def update_match(match_id):
+
+    key = request.args.get("key")
+
+    if key != admin_key:
+        return "NO AUTORIZADO", 403
+
+
+    with open("data/matches.json", "r", encoding="utf-8") as f:
+        matches = json.load(f)
+
+    for match in matches:
+
+        if match["id"] == match_id:
+
+            score1 = request.form["score1"]
+            score2 = request.form["score2"]
+
+            match["score1"] = int(score1) if score1 != "" else None
+            match["score2"] = int(score2) if score2 != "" else None
+
+    with open("data/matches.json", "w", encoding="utf-8") as f:
+        json.dump(matches, f, indent=4, ensure_ascii=False)
+
+    return redirect("/admin")
 
 # =========================
 # RUN APP
