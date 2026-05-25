@@ -46,9 +46,12 @@
                             {{ match.team1 }}
                         </div>
                     
-                        <div class="score">
-                            {{ match.score1 }} - {{ match.score2 }}
+                       <div class="score">
+                            {{ match.score1 if match.score1 is not none else 0 }}
+                            -
+                            {{ match.score2 if match.score2 is not none else 0 }}
                         </div>
+
 
                         <div class="team right">
 
@@ -92,3 +95,4 @@
     {% endfor %}
 
 </div>
+

@@ -1,250 +1,257 @@
-/* =========================
-   BASE
-========================= */
-
 body {
-    background-color: #0f172a;
-    color: white;
-    font-family: Arial, Helvetica, sans-serif;
-    margin: 0;
-    padding: 0;
+background-color: #0f172a;
+color: white;
+font-family: Arial, Helvetica, sans-serif;
+margin: 0;
+padding: 0;
 }
 
+/* CONTENEDOR */
 .main-container {
-    width: 95%;
-    max-width: 1400px;
-    margin: auto;
+width: 95%;
+max-width: 1400px;
+margin: auto;
 }
 
+/* TITULO */
 h1 {
-    text-align: center;
-    margin: 30px 0 40px;
-    font-size: 48px;
+text-align: center;
+margin-top: 30px;
+margin-bottom: 40px;
+font-size: 48px;
+}
+
+/* FECHAS */
+.date-title {
+margin-top: 40px;
+margin-bottom: 20px;
+font-size: 28px;
+color: #cbd5e1;
 }
 
 /* =========================
-   MATCHES (CARDS)
+PARTIDOS
 ========================= */
 
 .matches-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 20px;
+display: grid;
+grid-template-columns: repeat(2, 1fr);
+gap: 20px;
 }
 
+/* CARD */
 .card {
-    background-color: #1e293b;
-    border-radius: 14px;
-    padding: 18px;
-    transition: 0.3s;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+background-color: #1e293b;
+border-radius: 14px;
+padding: 18px;
+transition: 0.3s;
+box-shadow: 0px 4px 10px rgba(0,0,0,0.3);
 }
 
 .card:hover {
-    transform: translateY(-4px);
-    background-color: #334155;
+transform: translateY(-4px);
+background-color: #334155;
 }
 
 .card a {
-    color: white;
-    text-decoration: none;
+color: white;
+text-decoration: none;
 }
 
-/* =========================
-   MATCH ROW
-========================= */
-
+/* CONTENIDO PARTIDO */
 .match-row {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 10px;
+display: flex;
+justify-content: space-between;
+align-items: center;
+gap: 10px;
 }
 
 .team {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    font-size: 18px;
-    font-weight: bold;
-    flex: 1;
-    min-width: 0;
+display: flex;
+align-items: center;
+gap: 8px;
+font-size: 18px;
+font-weight: bold;
+width: 35%;
 }
 
 .right {
-    justify-content: flex-end;
+justify-content: flex-end;
+text-align: right;
 }
 
 .score {
-    font-size: 28px;
-    font-weight: bold;
-    color: #22c55e;
+font-size: 28px;
+font-weight: bold;
+color: #22c55e;
 }
 
 .hour {
-    margin-top: 15px;
-    color: #cbd5e1;
-    font-size: 14px;
-    text-align: center;
+margin-top: 15px;
+color: #cbd5e1;
+font-size: 14px;
+text-align: center;
 }
 
 .center-info {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 6px;
+display: flex;
+flex-direction: column;
+align-items: center;
+gap: 6px;
 }
 
 .group {
-    font-size: 13px;
-    color: #94a3b8;
+font-size: 13px;
+color: #94a3b8;
+font-weight: normal;
 }
 
-/* FLAGS */
-
+/* BANDERAS */
 .flag {
-    width: 40px;
-    height: auto;
-    border-radius: 6px;
+width: 40px;
+height: auto;
+border-radius: 6px;
 }
 
 .flag-small {
-    width: 26px;
-    height: 18px;
-    object-fit: cover;
-    border-radius: 3px;
+width: 26px;
+height: 18px;
+object-fit: cover;
+border-radius: 3px;
+flex-shrink: 0;
 }
 
 /* =========================
-   GROUPS LAYOUT (IMPORTANTE)
+TABLAS DE GRUPOS
 ========================= */
 
 .groups-section {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
-    align-items: start;
+display: grid;
+grid-template-columns: repeat(2, 1fr);
+gap: 25px;
+margin-bottom: 50px;
 }
-
-/* RESPONSIVE REAL */
-@media (max-width: 900px) {
-    .groups-section {
-        grid-template-columns: 1fr;
-    }
-
-    h1 {
-        font-size: 32px;
-    }
-}
-
-/* =========================
-   GROUP TABLE
-========================= */
 
 .group-table {
-    background-color: #1e293b;
-    padding: 15px;
-    border-radius: 10px;
+background-color: #1e293b;
+padding: 20px;
+border-radius: 14px;
+width: 100%;
+box-sizing: border-box;
 }
 
 .group-table h2 {
-    margin: 0 0 15px;
+margin-top: 0;
+margin-bottom: 15px;
+font-size: 34px;
 }
 
-/* =========================
-   TABLE (FIX REAL RESPONSIVE)
-========================= */
-
+/* TABLA */
 table {
-    width: 100%;
-    border-collapse: collapse;
-    table-layout: fixed;
+width: 100%;
+border-collapse: collapse;
+table-layout: fixed;
 }
 
-th, td {
-    padding: 10px;
-    text-align: center;
-    font-size: 14px;
+th,
+td {
+padding: 10px 6px;
+text-align: center;
+font-size: 15px;
 }
 
 th {
-    color: #94a3b8;
+color: #94a3b8;
 }
 
+/* COLUMNA EQUIPO */
+th:first-child,
+td:first-child {
+width: 45%;
+text-align: left;
+}
+
+/* FILAS */
 tr:not(:last-child) {
-    border-bottom: 1px solid #334155;
+border-bottom: 1px solid #334155;
 }
 
-/* ancho columna equipo */
-th:nth-child(1),
-td:nth-child(1) {
-    width: 40%;
-    text-align: left;
-}
-
-/* =========================
-   TEAM CELL (FIX DEFINITIVO)
-========================= */
-
+/* EQUIPO */
 .team-cell {
-    display: grid;
-    grid-template-columns: auto auto 1fr;
-    align-items: center;
-    gap: 8px;
-    min-width: 0;
-}
-
-/* nombre adaptable sin romper tabla */
-.team-name {
-    min-width: 0;
-    overflow-wrap: break-word;
-    white-space: normal;
+display: flex;
+align-items: center;
+gap: 10px;
+text-align: left;
+white-space: normal;
+word-break: break-word;
 }
 
 /* =========================
-   STATUS BOX
-========================= */
-
-.status-box {
-    width: 10px;
-    height: 18px;
-    border-radius: 3px;
-    flex-shrink: 0;
-}
-
-.status-clasificado {
-    background-color: #22c55e;
-}
-
-.status-tercero {
-    background-color: #f59e0b;
-}
-
-.status-eliminado {
-    background-color: #ef4444;
-}
-
-/* =========================
-   NAV
+BOTONES
 ========================= */
 
 .top-buttons {
-    display: flex;
-    gap: 15px;
-    justify-content: center;
-    margin-bottom: 30px;
+display: flex;
+gap: 15px;
+justify-content: center;
+margin-bottom: 30px;
+flex-wrap: wrap;
 }
 
 .nav-button {
-    background-color: #1e293b;
-    color: white;
-    text-decoration: none;
-    padding: 10px 20px;
-    border-radius: 10px;
-    font-weight: bold;
-    transition: 0.3s;
+background-color: #1e293b;
+color: white;
+text-decoration: none;
+padding: 10px 20px;
+border-radius: 10px;
+font-weight: bold;
+transition: 0.3s;
 }
 
 .nav-button:hover {
-    background-color: #334155;
+background-color: #334155;
+}
+
+/* =========================
+RESPONSIVE
+========================= */
+
+@media (max-width: 900px) {
+
+
+h1 {
+    font-size: 36px;
+}
+
+.matches-grid {
+    grid-template-columns: 1fr;
+}
+
+.groups-section {
+    grid-template-columns: 1fr;
+}
+
+.group-table h2 {
+    font-size: 28px;
+}
+
+th,
+td {
+    font-size: 13px;
+    padding: 8px 4px;
+}
+
+.team {
+    font-size: 15px;
+}
+
+.score {
+    font-size: 22px;
+}
+
+.flag-small {
+    width: 22px;
+    height: 15px;
+}
+
 }
