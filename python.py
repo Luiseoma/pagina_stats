@@ -1,0 +1,1 @@
+print ("Hola, este es el código de la aplicación de estadísticas del Mundial 2026. Aquí se muestran los partidos programados, los resultados y las estadísticas de los equipos. ¡Disfruta explorando los datos del torneo!")

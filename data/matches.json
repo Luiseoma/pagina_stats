@@ -962,13 +962,7 @@
     {
         "id": "R32M",
         "team1": "B1",
-        "team2_options": [
-            "E3",
-            "F3",
-            "G3",
-            "I3",
-            "J3"
-        ],
+        "team2_options": ["E3","F3","G3","I3","J3"],
         "score1": null,
         "score2": null,
         "date": "2026-07-02",

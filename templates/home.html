@@ -65,21 +65,19 @@
                     </div>
 
                     <div class="center-info">
-
-                        <div class="group"> 
-                            {% if "group" in match %}
-                                Grupo {{ match.group }}
-
-                            {% elif "stage" in match %}
+                        <div class="group">
+                           {% if "group" in match %} 
+                               Grupo {{ match.group }} 
+                           
+                           {% elif "stage" in match %}
                                 {{ match.stage }}
-                            {% endif %}
+                           {% endif %} 
                         </div>
-
-
-                        <p class="hour">
-                            {{ match.hour }}
-                        </p>
-                    </div>    
+                  
+                    <p class="hour">
+                        {{ match.hour }}
+                    </p>
+                    </div> 
                 </a>
 
             </div>
