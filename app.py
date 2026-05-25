@@ -584,7 +584,7 @@ def match(id):
 @app.route("/admin")
 def admin():
 
-    key = request.args.get("key")
+    key = request.args.get("key") or request.form.get("key")
 
     if key != admin_key:
         return "NO AUTORIZADO", 403
@@ -595,7 +595,7 @@ def admin():
     return render_template(
         "admin.html",
         matches=matches,
-        key=admin_key
+        key=key
 )
 
 @app.route("/update_match/<int:match_id>", methods=["POST"])
