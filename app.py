@@ -623,7 +623,7 @@ def update_match(match_id):
     with open("data/matches.json", "w", encoding="utf-8") as f:
         json.dump(matches, f, indent=4, ensure_ascii=False)
 
-    return redirect("/admin")
+    return redirect(f"/admin?key={admin_key}")
 
 # =========================
 # RUN APP
