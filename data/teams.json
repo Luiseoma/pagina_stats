@@ -19,6 +19,7 @@
 
     "Corea del Sur": {
         "flag": "southkorea.svg",
+        "rating": 1588.66, 
         "form":[0, 0, 1, 1, 1, 0, 0.5, 1, 0, 1],
         "goals_for": 11,
         "goals_against": 12,
@@ -27,6 +28,7 @@
 
     "Chequia": {
         "flag": "czechia.svg",
+        "rating": 1501.38,
         "form":[1, 1, 1, 1, 0, 0.5, 0.5, 1, 0, 1],
         "goals_for": 18,
         "goals_against": 12,
