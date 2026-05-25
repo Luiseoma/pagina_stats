@@ -178,14 +178,17 @@ border-bottom: 1px solid #334155;
 
 /* EQUIPO */
 .team-cell {
-display: flex;
-align-items: center;
-gap: 10px;
-text-align: left;
-white-space: normal;
-word-break: break-word;
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
 
+.team-name {
+    min-width: 140px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
 /* =========================
 BOTONES
 ========================= */
@@ -254,4 +257,25 @@ td {
     height: 15px;
 }
 
+}
+
+.status-box {
+    width: 22px;
+    height: 8px;
+    min-width: 22px;
+    display: inline-block;
+    border-radius: 2px;
+    box-shadow: 0 0 6px rgba(255,255,255,0.15);
+}
+
+.status-clasificado {
+    background-color: #22c55e;
+}
+
+.status-tercero {
+    background-color: #facc15;
+}
+
+.status-eliminado {
+    background-color: #ef4444;
 }
