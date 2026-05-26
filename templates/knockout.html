@@ -18,7 +18,7 @@
 
         <div class="match-card">
             
-            <div class="team-row">
+            <div class="knockout-team-row">
             
                     <div class="team">
             
@@ -32,12 +32,16 @@
                         {{ match.team1 }}
             
                     </div>
+
+                    <div class="knockout-score">
+                        {{ match.score1 if match.score1 is not none else "-" }}
+                    </div>
             
                 </div>
             
                 <div class="divider"></div>
             
-                <div class="team-row">
+                <div class="knockout-team-row">
             
                     <div class="team">
             
@@ -54,6 +58,9 @@
                             {{ match.team2_options | join(" / ") }}
                         {% endif %}
             
+                    </div>
+                    <div class="knockout-score">
+                        {{ match.score2 if match.score2 is not none else "-" }}
                     </div>
             
                 </div>

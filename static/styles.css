@@ -248,10 +248,6 @@ td {
     font-size: 15px;
 }
 
-.score {
-    font-size: 22px;
-}
-
 .flag-small {
     width: 22px;
     height: 15px;
@@ -334,4 +330,19 @@ RONDAS ELIMINATORIAS
     height: 14px;
     object-fit: cover;
     border-radius: 2px;
+}
+
+.knockout-team-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 6px 0;
+}
+
+.knockout-score {
+    font-size: 18px;
+    font-weight: bold;
+    color: #22c55e;
+    min-width: 20px;
+    text-align: center;  
 }
