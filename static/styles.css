@@ -299,6 +299,13 @@ RONDAS ELIMINATORIAS
     border-radius: 12px;
     padding: 14px;
     min-width: 220px;
+    transition: 0.3s;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.match-card:hover {
+    transform: translateY(-4px);
+    background-color: #334155;
 }
 
 .team-row {
@@ -345,4 +352,9 @@ RONDAS ELIMINATORIAS
     color: #22c55e;
     min-width: 20px;
     text-align: center;  
+}
+.match-link {
+    text-decoration: none; 
+    color: inherit; 
+    display: block;
 }

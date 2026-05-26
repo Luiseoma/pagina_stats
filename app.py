@@ -534,7 +534,21 @@ def match(id):
 
     with open("data/matches.json", "r", encoding="utf-8") as file:
         matches_list = json.load(file)
+    
+    # =========================
+    # MATCH PAGE
+    # =========================
+    tablas, clasificados = generar_tablas(matches_list)
 
+    # =========================
+    # ELIMINATORIAS
+    # =========================
+    matches_list = resolver_equipos_r32(matches_list, tablas)
+    matches_list = generar_r16(matches_list)
+    matches_list = generar_cuartos(matches_list)
+    matches_list = generar_semis(matches_list)
+    matches_list = generar_final(matches_list)
+        
     matches = {
         str(match["id"]): match
         for match in matches_list
@@ -562,7 +576,11 @@ def match(id):
 
     #Por si falta data
     if not team1_data or not team2_data:
-        return "Error: equipo no encontrado"
+        return render_template(
+            "match.html",
+            match=match,
+            no_teams=True
+        )
 
     # Calcular fuerza
 

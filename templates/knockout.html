@@ -16,6 +16,8 @@
 
         {% for match in matches %}
 
+        <a href="/match/{{ match.id }}" class="match-link">
+
         <div class="match-card">
             
             <div class="knockout-team-row">
@@ -69,6 +71,7 @@
                     <p>{{ match.date }}</p>
                     <p>{{ match.hour }}</p>
                 </div>
+        </a>
         </div>
 
         {% endfor %}
