@@ -1,0 +1,72 @@
+<link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+
+<div class="top-buttons">
+
+    <a href="/tables" class="nav-button">🏆 Clasificación</a>
+    <a href="/" class="nav-button">⚽ Fase de grupos</a>
+</div>
+
+<div class="bracket">
+
+    {% for stage, matches in rounds.items() %}
+
+    <div class="round-column">
+
+        <h2>{{ stage }}</h2>
+
+        {% for match in matches %}
+
+        <div class="match-card">
+            
+            <div class="team-row">
+            
+                    <div class="team">
+            
+                        {% if match.team1 in teams %}
+                            <img
+                                class="flag-small"
+                                src="{{ url_for('static', filename='flags/' + teams[match.team1].flag) }}"
+                            >
+                        {% endif %}
+            
+                        {{ match.team1 }}
+            
+                    </div>
+            
+                </div>
+            
+                <div class="divider"></div>
+            
+                <div class="team-row">
+            
+                    <div class="team">
+            
+                        {% if match.team2 and match.team2 in teams %}
+                            <img
+                                class="flag-small"
+                                src="{{ url_for('static', filename='flags/' + teams[match.team2].flag) }}"
+                            >
+                        {% endif %}
+            
+                        {% if match.team2 %}
+                            {{ match.team2 }}
+                        {% else %}
+                            {{ match.team2_options | join(" / ") }}
+                        {% endif %}
+            
+                    </div>
+            
+                </div>
+                
+                <div class="match-info">
+                    <p>{{ match.date }}</p>
+                    <p>{{ match.hour }}</p>
+                </div>
+        </div>
+
+        {% endfor %}
+        
+    </div>
+
+    {% endfor %}
+</div>

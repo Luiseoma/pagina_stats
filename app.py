@@ -17,7 +17,6 @@ def fuerza(form):
 # =========================
 # TABLAS
 # =========================
-
 def generar_tablas(matches_list):
     tablas = {}
 
@@ -150,11 +149,32 @@ def generar_tablas(matches_list):
 # =========================
 # DEFINIR RONDA 32
 # =========================
-def resolver_equipos_r32(matches_list, tablas):
-    posiciones = {}
+def grupos_terminados(tablas):
+
+    grupos_ok = {}
 
     for group, teams in tablas.items():
 
+        terminado = True
+
+        for stats in teams.values():
+            if stats ["pj"] < 3:
+                terminado = False
+                break
+        
+        grupos_ok[group] = terminado
+    
+    return grupos_ok
+
+def resolver_equipos_r32(matches_list, tablas):
+    posiciones = {}
+
+    grupos_ok = grupos_terminados(tablas)
+
+    for group, teams in tablas.items():
+        if not grupos_ok[group]:
+            continue
+    
         equipos = list(teams.keys())
 
         if len(equipos) >= 1:
@@ -166,32 +186,28 @@ def resolver_equipos_r32(matches_list, tablas):
         if len(equipos) >= 3:
             posiciones[f"{group}3"] = equipos[2]
 
-    # reemplazar placeholders
     for match in matches_list:
 
         if match.get("stage") != "Round of 32":
             continue
 
-        # TEAM1
         team1 = match.get("team1")
 
-        if team1 in posiciones:
+        if team1 in posiciones: 
             match["team1"] = posiciones[team1]
 
-        # TEAM2
         team2 = match.get("team2")
 
         if team2 in posiciones:
             match["team2"] = posiciones[team2]
 
-        # TEAM2 OPTIONS
         if "team2_options" in match:
 
             opciones_reales = []
 
-            for option in match["team2_options"]:
+            for option in match ["team2_options"]:
 
-                if option in posiciones:
+                if option in posiciones: 
                     opciones_reales.append(posiciones[option])
 
             if opciones_reales:
@@ -308,8 +324,16 @@ def generar_r16(matches_list):
         ganador1 = obtener_ganador(r32[r32_1])
         ganador2 = obtener_ganador(r32[r32_2])
 
-        match["team1"] = ganador1
-        match["team2"] = ganador2
+        match["team1"] = (
+            ganador1
+            if ganador1
+            else f"Ganador {r32_1}"
+        )
+        match["team2"] = (
+            ganador2
+            if ganador2
+            else f"Ganador {r32_2}"
+        )
 
     return matches_list
 
@@ -342,9 +366,16 @@ def generar_cuartos(matches_list):
         ganador1 = obtener_ganador(r16[r16_1])
         ganador2 = obtener_ganador(r16[r16_2])
 
-        match["team1"] = ganador1
-        match["team2"] = ganador2
-
+        match["team1"] = (
+            ganador1
+            if ganador1
+            else f"Ganador {r16_1}"
+        )
+        match["team2"] = ( 
+            ganador2
+            if ganador2
+            else f"Ganador {r16_2}"
+        )
     return matches_list
 
 # =========================
@@ -374,8 +405,17 @@ def generar_semis(matches_list):
         ganador1 = obtener_ganador(cuartos[qr1])
         ganador2 = obtener_ganador(cuartos[qr2])
 
-        match["team1"] = ganador1
-        match["team2"] = ganador2
+        match["team1"] =( 
+            ganador1
+            if ganador1
+            else f"Ganador {qr1}"
+        )
+        
+        match["team2"] = ( 
+            ganador2
+            if ganador2
+            else f"Ganador {qr2}"
+        )
 
     return matches_list
 
@@ -399,8 +439,16 @@ def generar_final(matches_list):
             ganador1 = obtener_ganador(semis["SF1"])
             ganador2 = obtener_ganador(semis["SF2"])
 
-            match["team1"] = ganador1
-            match["team2"] = ganador2
+            match["team1"] = (
+                ganador1
+                if ganador1
+                else f"Ganador SF1"
+            )
+            match["team2"] = (
+                ganador2
+                if ganador2
+                else f"Ganador SF2"
+            )
 
         # TERCER PUESTO
         elif match["id"] == "THIRD":
@@ -408,8 +456,16 @@ def generar_final(matches_list):
             perdedor1 = obtener_perdedor(semis["SF1"])
             perdedor2 = obtener_perdedor(semis["SF2"])
 
-            match["team1"] = perdedor1
-            match["team2"] = perdedor2
+            match["team1"] = (
+                perdedor1
+                if perdedor1
+                else f"Perdedor SF1"
+            )
+            match["team2"] = (
+                perdedor2
+                if perdedor2
+                else f"Perdedor SF2"
+            )
 
     return matches_list
 
@@ -428,30 +484,17 @@ with open("data/teams.json", "r", encoding="utf-8") as file:
 @app.route("/")
 def home():
 
-    with open("data/matches.json", "r", encoding="utf-8") as file:
-        matches_list = json.load(file)
+    with open("data/matches.json", "r", encoding="utf-8") as f:
+        matches_list= json.load(f)
 
-    tablas, clasificados = generar_tablas(matches_list)
-
-    updated_matches = resolver_equipos_r32(matches_list, tablas)
-
-    updated_matches = generar_r16(updated_matches)
-
-    updated_matches = generar_cuartos(updated_matches)
-
-    updated_matches = generar_semis(updated_matches)
-
-    updated_matches = generar_final(updated_matches)
-
-    global matches
-    matches = {
-        str(match["id"]): match
-        for match in updated_matches
-    }
+    group_matches = [
+        m for m in matches_list
+        if "group" in m
+    ]
 
     matches_by_date = defaultdict(list)
 
-    for match in updated_matches:
+    for match in group_matches:
         matches_by_date[match["date"]].append(match)
 
     return render_template(
@@ -624,6 +667,61 @@ def update_match(match_id):
         json.dump(matches, f, indent=4, ensure_ascii=False)
 
     return redirect(f"/admin?key={key}")
+
+# =========================
+# KNOCKOUT PAGE
+# =========================
+
+@app.route("/knockout")
+def knockout():
+
+    with open("data/matches.json", "r", encoding="utf-8") as f:
+        matches_list = json.load(f)
+
+    #=========================
+    #GENERAR TABLAS
+    #=========================
+
+    tablas, clasificados = generar_tablas(matches_list)
+
+    #=========================
+    #RESOLVER RONDA 32
+    #=========================
+
+    matches_list = resolver_equipos_r32(matches_list, tablas)
+
+    #=========================
+    #SIGUIENTES RONDAS
+    #=========================
+
+    matches_list = generar_r16(matches_list)
+    matches_list = generar_cuartos(matches_list)
+    matches_list = generar_semis(matches_list)
+    matches_list = generar_final(matches_list)
+
+    #=========================
+    #FILTRAR KNOCKOUTS
+    #=========================
+
+    knockout_matches = [
+        m for m in matches_list
+        if "stage" in m 
+    ]
+
+    #=========================
+    #AGRUPAR
+    #=========================
+    rounds = defaultdict(list)
+
+    for match in knockout_matches:
+        rounds[match["stage"]].append(match)
+    
+    return render_template(
+        "knockout.html",
+        rounds=rounds,
+        teams=teams
+    )
+
 
 # =========================
 # RUN APP

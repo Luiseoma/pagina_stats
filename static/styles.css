@@ -279,3 +279,59 @@ td {
 .status-eliminado {
     background-color: #ef4444;
 }
+
+/* =========================
+RONDAS ELIMINATORIAS
+========================= */ 
+
+.bracket {
+    display: flex;
+    gap: 40px;
+    overflow-x: auto;
+    padding: 20px;
+}
+
+.round-column {
+    min-width: 240px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.match-card {
+    background-color: #1e293b;
+    border-radius: 12px;
+    padding: 14px;
+    min-width: 220px;
+}
+
+.team-row {
+    padding: 6px 0;
+}
+
+.team {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 600;
+}
+
+.divider {
+    height: 1px;
+    background-color: #334155;
+    margin: 8px 0;
+}
+
+.match-info {
+    margin-top: 10px;
+    text-align: center;
+    font-size: 13px;
+    color: #94a3b8;
+}
+
+.flag-small {
+    width: 20px;
+    height: 14px;
+    object-fit: cover;
+    border-radius: 2px;
+}
