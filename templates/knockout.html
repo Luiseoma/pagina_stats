@@ -16,9 +16,24 @@
 
         {% for match in matches %}
 
+        {% set bloqueado = 
+            "Ganador" in match.team1 or
+            "Ganador" in match.team2 or
+            "Perdedor" in match.team1 or
+            "Perdedor" in match.team2 or
+            match.team1.endswith("1") or
+            match.team1.endswith("2") or
+            match.team1.endswith("3") or
+            match.team2.endswith("1") or
+            match.team2.endswith("2") or
+            match.team2.endswith("3")  
+        %}
+        
+        {% if not bloqueado %}
         <a href="/match/{{ match.id }}" class="match-link">
+        {% endif %}
 
-        <div class="match-card">
+        <div class="match-card {% if bloqueado %}disabled{% endif %}">
             
             <div class="knockout-team-row">
             
@@ -71,8 +86,11 @@
                     <p>{{ match.date }}</p>
                     <p>{{ match.hour }}</p>
                 </div>
-        </a>
+
         </div>
+        {% if not bloqueado %}
+        </a>
+        {% endif %}
 
         {% endfor %}
         

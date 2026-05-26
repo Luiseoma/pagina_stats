@@ -358,3 +358,7 @@ RONDAS ELIMINATORIAS
     color: inherit; 
     display: block;
 }
+.match-card.disabled {
+    opacity: 0.6;
+    cursor: default;
+}
